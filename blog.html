@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - JD Bella Arte | Dicas e Tendências em Móveis</title>
+    <meta name="description" content="Blog da JD Bella Arte com dicas de decoração, tendências em móveis sob medida, cuidados com móveis de madeira e projetos exclusivos.">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+        .blog-hero {
+            background: linear-gradient(135deg, rgba(212, 167, 106, 0.9), rgba(184, 149, 106, 0.9)), url('assets/images/81aa6aad-aca9-426a-ad6d-74000b1a03b8.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .blog-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 60px;
+        }
+        
+        .blog-posts {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+        
+        .blog-post {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .blog-post:hover {
+            transform: translateY(-5px);
+        }
+        
+        .blog-post img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .blog-content {
+            padding: 30px;
+        }
+        
+        .blog-category {
+            background: #D4A76A;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        
+        .blog-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #2B2118;
+        }
+        
+        .blog-excerpt {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .blog-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+            color: #999;
+        }
+        
+        .read-more {
+            background: #D4A76A;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .read-more:hover {
+            background: #B8956A;
+        }
+        
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+        
+        .sidebar-widget {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .widget-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #2B2118;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #D4A76A;
+            padding-bottom: 10px;
+        }
+        
+        .recent-posts {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .recent-post {
+            display: flex;
+            gap: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .recent-post:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        
+        .recent-post img {
+            width: 60px;
+            height: 60px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+        
+        .recent-post-content h4 {
+            font-size: 14px;
+            font-weight: 600;
+            color: #2B2118;
+            margin-bottom: 5px;
+        }
+        
+        .recent-post-date {
+            font-size: 12px;
+            color: #999;
+        }
+        
+        .categories-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .category-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            text-decoration: none;
+            color: #2B2118;
+            transition: all 0.3s ease;
+        }
+        
+        .category-item:hover {
+            background: #D4A76A;
+            color: white;
+        }
+        
+        .category-count {
+            background: #D4A76A;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 12px;
+        }
+        
+        .category-item:hover .category-count {
+            background: white;
+            color: #D4A76A;
+        }
+        
+        @media (max-width: 768px) {
+            .blog-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .blog-hero {
+                padding: 60px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="blog-hero">
+        <div class="container">
+            <h1>📝 Blog JD Bella Arte</h1>
+            <p>Dicas, tendências e inspirações em móveis sob medida</p>
+        </div>
+    </section>
+    
+    <div class="blog-container">
+        <main class="blog-posts">
+            <!-- Post 1 -->
+            <article class="blog-post">
+                <img src="assets/images/catalogo/chales-modulares/chale-modular-1.jpg" alt="Chalé Modular 2025">
+                <div class="blog-content">
+                    <span class="blog-category">Novidades 2025</span>
+                    <h2 class="blog-title">Chalés Modulares: A Revolução da Moradia Sustentável</h2>
+                    <p class="blog-excerpt">
+                        Descubra como os chalés modulares estão transformando o conceito de moradia, 
+                        combinando sustentabilidade, rapidez na construção e design inovador. 
+                        Uma solução perfeita para quem busca qualidade de vida e consciência ambiental.
+                    </p>
+                    <div class="blog-meta">
+                        <span>📅 12 de Setembro, 2025</span>
+                        <a href="#" class="read-more">Ler Mais</a>
+                    </div>
+                </div>
+            </article>
+            
+            <!-- Post 2 -->
+            <article class="blog-post">
+                <img src="assets/images/catalogo/moveis-sob-medida/bancada-gourmet.jpg" alt="Móveis Sob Medida">
+                <div class="blog-content">
+                    <span class="blog-category">Dicas</span>
+                    <h2 class="blog-title">5 Vantagens dos Móveis Sob Medida para Sua Casa</h2>
+                    <p class="blog-excerpt">
+                        Móveis sob medida não são apenas uma questão de estética, mas também de 
+                        funcionalidade e aproveitamento de espaço. Conheça os principais benefícios 
+                        de investir em móveis personalizados para seu lar.
+                    </p>
+                    <div class="blog-meta">
+                        <span>📅 10 de Setembro, 2025</span>
+                        <a href="#" class="read-more">Ler Mais</a>
+                    </div>
+                </div>
+            </article>
+            
+            <!-- Post 3 -->
+            <article class="blog-post">
+                <img src="assets/images/catalogo/estantes/estante-livros.jpg" alt="Cuidados com Móveis de Madeira">
+                <div class="blog-content">
+                    <span class="blog-category">Cuidados</span>
+                    <h2 class="blog-title">Como Cuidar dos Seus Móveis de Madeira: Guia Completo</h2>
+                    <p class="blog-excerpt">
+                        A madeira é um material nobre que requer cuidados específicos para manter 
+                        sua beleza e durabilidade. Aprenda as melhores práticas para conservar 
+                        seus móveis de madeira por muitos anos.
+                    </p>
+                    <div class="blog-meta">
+                        <span>📅 08 de Setembro, 2025</span>
+                        <a href="#" class="read-more">Ler Mais</a>
+                    </div>
+                </div>
+            </article>
+            
+            <!-- Post 4 -->
+            <article class="blog-post">
+                <img src="assets/images/catalogo/areas-externas/mesa-jardim.jpg" alt="Móveis para Áreas Externas">
+                <div class="blog-content">
+                    <span class="blog-category">Tendências</span>
+                    <h2 class="blog-title">Móveis para Área Externa: Criando Espaços de Convivência</h2>
+                    <p class="blog-excerpt">
+                        Transforme sua área externa em um verdadeiro espaço de lazer e convivência. 
+                        Descubra as melhores opções em móveis resistentes às intempéries e com 
+                        design que combina com a natureza.
+                    </p>
+                    <div class="blog-meta">
+                        <span>📅 06 de Setembro, 2025</span>
+                        <a href="#" class="read-more">Ler Mais</a>
+                    </div>
+                </div>
+            </article>
+        </main>
+        
+        <aside class="sidebar">
+            <!-- Posts Recentes -->
+            <div class="sidebar-widget">
+                <h3 class="widget-title">📚 Posts Recentes</h3>
+                <div class="recent-posts">
+                    <div class="recent-post">
+                        <img src="assets/images/catalogo/aparadores/aparador-sala.jpg" alt="Aparadores">
+                        <div class="recent-post-content">
+                            <h4>Aparadores: Funcionalidade e Estilo</h4>
+                            <span class="recent-post-date">05 Set 2025</span>
+                        </div>
+                    </div>
+                    <div class="recent-post">
+                        <img src="assets/images/catalogo/banquetas/banqueta-alta.jpg" alt="Banquetas">
+                        <div class="recent-post-content">
+                            <h4>Banquetas Modernas para Cozinha</h4>
+                            <span class="recent-post-date">03 Set 2025</span>
+                        </div>
+                    </div>
+                    <div class="recent-post">
+                        <img src="assets/images/catalogo/conjuntos/mesa-jantar.jpg" alt="Conjuntos">
+                        <div class="recent-post-content">
+                            <h4>Conjuntos de Jantar: Elegância à Mesa</h4>
+                            <span class="recent-post-date">01 Set 2025</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Categorias -->
+            <div class="sidebar-widget">
+                <h3 class="widget-title">🏷️ Categorias</h3>
+                <div class="categories-list">
+                    <a href="#" class="category-item">
+                        <span>Novidades 2025</span>
+                        <span class="category-count">3</span>
+                    </a>
+                    <a href="#" class="category-item">
+                        <span>Dicas de Decoração</span>
+                        <span class="category-count">8</span>
+                    </a>
+                    <a href="#" class="category-item">
+                        <span>Cuidados e Manutenção</span>
+                        <span class="category-count">5</span>
+                    </a>
+                    <a href="#" class="category-item">
+                        <span>Tendências</span>
+                        <span class="category-count">6</span>
+                    </a>
+                    <a href="#" class="category-item">
+                        <span>Projetos Especiais</span>
+                        <span class="category-count">4</span>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Newsletter -->
+            <div class="sidebar-widget">
+                <h3 class="widget-title">📧 Newsletter</h3>
+                <p style="margin-bottom: 20px; color: #666;">
+                    Receba dicas exclusivas e novidades sobre móveis sob medida!
+                </p>
+                <form style="display: flex; flex-direction: column; gap: 15px;">
+                    <input type="email" placeholder="Seu melhor email" 
+                           style="padding: 12px; border: 2px solid #f0f0f0; border-radius: 10px; font-family: inherit;">
+                    <button type="submit" 
+                            style="background: #D4A76A; color: white; padding: 12px; border: none; border-radius: 10px; font-weight: 600; cursor: pointer;">
+                        📧 Inscrever-se
+                    </button>
+                </form>
+            </div>
+            
+            <!-- Contato -->
+            <div class="sidebar-widget">
+                <h3 class="widget-title">💬 Fale Conosco</h3>
+                <p style="margin-bottom: 20px; color: #666;">
+                    Tem uma ideia para um projeto especial? Vamos conversar!
+                </p>
+                <a href="https://wa.me/5541996390108?text=Olá,%20vim%20pelo%20blog.%20Gostaria%20de%20informações%20sobre%20móveis%20da%20JD%20Bella%20Arte" 
+                   target="_blank"
+                   style="background: #25D366; color: white; padding: 15px 20px; border-radius: 50px; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; font-weight: 600;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/>
+                    </svg>
+                    WhatsApp
+                </a>
+            </div>
+        </aside>
+    </div>
+    
+    <footer style="background: #2B2118; color: white; padding: 40px 0; text-align: center;">
+        <div class="container">
+            <p>&copy; 2025 JD Bella Arte - Blog sobre móveis sob medida e decoração</p>
+            <p style="margin-top: 10px;">
+                <a href="index.html" style="color: #D4A76A; text-decoration: none;">🏠 Voltar ao Catálogo</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
