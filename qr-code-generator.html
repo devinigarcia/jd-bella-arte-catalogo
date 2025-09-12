@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador QR Code - JD Bella Arte</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #D4A76A;
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+        }
+        .qr-section {
+            margin: 30px 0;
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 15px;
+        }
+        .qr-code {
+            margin: 20px 0;
+        }
+        .url {
+            background: #e9ecef;
+            padding: 15px;
+            border-radius: 10px;
+            font-family: monospace;
+            font-size: 14px;
+            word-break: break-all;
+            margin: 15px 0;
+        }
+        .instructions {
+            text-align: left;
+            background: #e8f5e8;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+        .btn {
+            background: #D4A76A;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn:hover {
+            background: #B8956A;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎯 QR Code - JD Bella Arte</h1>
+        
+        <div class="qr-section">
+            <h3>📱 QR Code do Catálogo Online</h3>
+            <div class="url">
+                https://devinigarcia.github.io/jd-bella-arte-catalogo/
+            </div>
+            
+            <div class="qr-code">
+                <div id="qrcode"></div>
+            </div>
+            
+            <a href="#" onclick="downloadQR()" class="btn">📥 Baixar QR Code</a>
+            <a href="#" onclick="printQR()" class="btn">🖨️ Imprimir</a>
+        </div>
+        
+        <div class="instructions">
+            <h4>📋 Como Usar o QR Code:</h4>
+            <ul>
+                <li><strong>Cartão de Visita:</strong> Adicione o QR Code no verso</li>
+                <li><strong>Flyers:</strong> Inclua com o texto "Veja nosso catálogo online"</li>
+                <li><strong>Loja Física:</strong> Imprima em banner ou placa</li>
+                <li><strong>WhatsApp Status:</strong> Compartilhe a imagem</li>
+                <li><strong>Redes Sociais:</strong> Poste nos stories</li>
+            </ul>
+            
+            <h4>📐 Tamanhos Recomendados:</h4>
+            <ul>
+                <li><strong>Cartão:</strong> 2cm x 2cm (mínimo)</li>
+                <li><strong>Flyer:</strong> 3cm x 3cm</li>
+                <li><strong>Banner:</strong> 10cm x 10cm ou maior</li>
+            </ul>
+            
+            <h4>💡 Dicas:</h4>
+            <ul>
+                <li>Teste sempre com seu celular antes de imprimir</li>
+                <li>Mantenha boa qualidade de impressão</li>
+                <li>Adicione texto explicativo: "Escaneie para ver o catálogo"</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+    <script>
+        // Gerar QR Code
+        const url = 'https://devinigarcia.github.io/jd-bella-arte-catalogo/';
+        
+        QRCode.toCanvas(document.getElementById('qrcode'), url, {
+            width: 256,
+            height: 256,
+            colorDark: '#2B2118',
+            colorLight: '#FFFFFF',
+            margin: 2,
+            errorCorrectionLevel: 'M'
+        }, function (error) {
+            if (error) console.error(error);
+            console.log('QR Code gerado com sucesso!');
+        });
+
+        function downloadQR() {
+            const canvas = document.querySelector('#qrcode canvas');
+            const link = document.createElement('a');
+            link.download = 'jd-bella-arte-qrcode.png';
+            link.href = canvas.toDataURL();
+            link.click();
+        }
+
+        function printQR() {
+            window.print();
+        }
+    </script>
+</body>
+</html>

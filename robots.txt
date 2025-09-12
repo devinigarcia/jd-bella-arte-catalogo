@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://devinigarcia.github.io/jd-bella-arte-catalogo/sitemap.xml
+
+# Disallow backup files
+Disallow: /index_backup*.html
+Disallow: /pages/
+Disallow: /*.ps1
+Disallow: /*.bat
+Disallow: /*.md
+
+# Allow important assets
+Allow: /assets/
+Allow: /assets/images/
+Allow: /assets/css/
+Allow: /assets/js/
