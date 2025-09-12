@@ -1,0 +1,79 @@
+/* 
+ * JD Bella Arte - Catálogo de Produtos
+ * Estilos adicionais para otimização do catálogo
+ */
+
+/* Estilos para o novo logo */
+.logo__image {
+  height: 70px; /* Aumentado de 50px para 70px */
+  width: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover .logo__image {
+  transform: scale(1.05);
+}
+
+.logo__image--colorful {
+  /* Para a versão colorida do logo */
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .logo__image {
+    height: 50px; /* Aumentado de 40px para 50px */
+  }
+}
+
+/* Estilos para imagens de produtos */
+.catalog-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  transition: transform 0.3s ease;
+}
+
+/* Estilos para corpo dos cards */
+.catalog-card-body {
+  padding: var(--spacing-md);
+  text-align: center;
+}
+
+/* Estilos para títulos dos cards */
+.catalog-card-title {
+  margin: 0 0 var(--spacing-sm) 0;
+  color: #D4A76A;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* Estilos para botões de solicitar informações */
+.catalog-btn-full {
+  width: 100%;
+}
+
+/* Grid de produtos */
+.catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-xl);
+}
+
+/* Media queries para responsividade */
+@media (max-width: 1024px) {
+  .catalog-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .catalog-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .catalog-image {
+    height: 200px;
+  }
+}

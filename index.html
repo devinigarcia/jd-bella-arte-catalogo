@@ -1,0 +1,609 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <title>JD Bella Arte | Móveis Sob Medida, Chalés Modulares e Móveis Artesanais</title>
+  <meta name="description" content="JD Bella Arte - 35 anos criando móveis sob medida únicos. Chalés modulares, móveis artesanais e industriais, estantes, aparadores, banquetas. Atendemos Almirante Tamandaré e região metropolitana de Curitiba.">
+  <meta name="keywords" content="móveis sob medida, chalés modulares, móveis artesanais, estantes, aparadores, banquetas, móveis industriais, decoração, Almirante Tamandaré, Curitiba, móveis personalizados">
+  <meta name="author" content="JD Bella Arte">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="pt-BR">
+  <meta name="geo.region" content="BR-PR">
+  <meta name="geo.placename" content="Almirante Tamandaré">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="JD Bella Arte | Móveis Sob Medida e Chalés Modulares">
+  <meta property="og:description" content="35 anos criando móveis únicos sob medida. Chalés modulares, móveis artesanais e industriais com design exclusivo.">
+  <meta property="og:image" content="assets/images/logo-jd-bella-arte-new.png">
+  <meta property="og:url" content="https://jdbellaarte.com.br">
+  <meta property="og:site_name" content="JD Bella Arte">
+  <meta property="og:locale" content="pt_BR">
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="JD Bella Arte | Móveis Sob Medida e Chalés Modulares">
+  <meta name="twitter:description" content="35 anos criando móveis únicos sob medida. Chalés modulares, móveis artesanais e industriais com design exclusivo.">
+  <meta name="twitter:image" content="assets/images/logo-jd-bella-arte-new.png">
+  
+  <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="alternate icon" type="image/png" href="assets/images/logo-jd-bella-arte-new.png">
+  <link rel="apple-touch-icon" href="assets/images/logo-jd-bella-arte-new.png">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/header.css">
+  <link rel="stylesheet" href="assets/css/hero.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/catalog-enhancements.css">
+  
+  <!-- Structured Data for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "JD Bella Arte",
+    "description": "Móveis sob medida artesanais e industriais há 35 anos. Chalés modulares, estantes, aparadores, banquetas e móveis personalizados.",
+    "url": "https://jdbellaarte.com.br",
+    "telephone": "+55-41-99639-0108",
+    "email": "contato@jdbellaarte.com.br",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Tv. Kleina, 446",
+      "addressLocality": "Almirante Tamandaré",
+      "addressRegion": "PR",
+      "addressCountry": "BR"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "-25.3244",
+      "longitude": "-49.3038"
+    },
+    "openingHours": "Mo-Sa 08:00-18:00",
+    "priceRange": "$$",
+    "image": "assets/images/logo-jd-bella-arte-new.png",
+    "sameAs": [
+      "https://www.instagram.com/jdbellaarte_moveis/",
+      "https://wa.me/5541996390108"
+    ],
+    "offers": {
+      "@type": "Offer",
+      "description": "Móveis sob medida personalizados"
+    }
+  }
+  </script>
+  
+  <style>
+    /* Estilos específicos para o catálogo em grid */
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-top: var(--spacing-md);
+      margin-bottom: var(--spacing-lg);
+    }
+    
+    .category-card {
+      position: relative;
+      aspect-ratio: 1/1;
+      width: 100%;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: var(--shadow-warm);
+      transition: opacity 0.3s ease;
+      cursor: pointer;
+      background-color: var(--color-primary);
+      height: auto;
+    }
+    
+    .category-card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--shadow-sharp);
+    }
+    
+    .category-card__image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    
+    .category-card:hover .category-card__image {
+      transform: scale(1.05);
+    }
+    
+    .category-card__overlay {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: var(--spacing-md);
+      background: rgba(0, 0, 0, 0.4);
+      color: var(--color-light);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: flex-start;
+      transition: background 0.3s ease;
+    }
+    
+    .category-card:hover .category-card__overlay {
+      background: rgba(0, 0, 0, 0.5);
+    }
+    
+    .category-card__content {
+      width: 100%;
+    }
+    
+    .category-card__title {
+      font-size: var(--fs-xl);
+      font-weight: 600;
+      margin: 0;
+      font-family: var(--font-primary);
+      color: white;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    }
+    
+    /* Responsividade para o grid - MANTENDO 4 COLUNAS no desktop */
+    @media (max-width: 1200px) {
+      .category-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+    
+    @media (max-width: 992px) {
+      .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .category-grid {
+        grid-template-columns: repeat(1, 1fr);
+      }
+    }
+    
+    /* Estilos para a seção de produtos da categoria */
+    .category-products-section {
+      display: none;
+    }
+    
+    .category-products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: var(--spacing-2xl);
+      margin-bottom: var(--spacing-2xl);
+    }
+    
+    .category-product-card {
+      position: relative;
+      aspect-ratio: 1/1;
+      width: 100%;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: var(--shadow-warm);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    
+    .category-product-card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--shadow-sharp);
+    }
+    
+    .category-product-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    
+    .category-product-card:hover img {
+      transform: scale(1.05);
+    }
+    
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .animate-on-scroll {
+      opacity: 0;
+    }
+    
+    .animate-on-scroll.animated {
+      animation: fadeIn 0.6s forwards;
+    }
+    
+    /* Estilos responsivos para CTA e Footer */
+    @media (max-width: 992px) {
+      .grid.grid-cols-3 {
+        grid-template-columns: repeat(2, 1fr) !important;
+      }
+      
+      .grid.grid-cols-3 > div:last-child {
+        grid-column: 1 / -1;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .grid.grid-cols-3 {
+        grid-template-columns: 1fr !important;
+      }
+      
+      .grid.grid-cols-3 > div:last-child {
+        grid-column: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header" role="banner">
+    <div class="header__container container">
+      <a href="index.html" class="logo" aria-label="JD Bella Arte - Página inicial">
+        <img src="assets/images/81aa6aad-aca9-426a-ad6d-74000b1a03b8.jpg" alt="Logo JD Bella Arte" class="logo__image">
+        <div class="logo__text-container">
+          <h1 class="logo__text">JD Bella Arte</h1>
+          <span class="logo__subtitle">Móveis Artesanais</span>
+        </div>
+      </a>
+
+      <nav class="nav" role="navigation" aria-label="Navegação principal">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a href="index.html" class="nav__link active" aria-current="page">Home</a>
+          </li>
+          <li class="nav__item">
+            <a href="#catalogo" class="nav__link">Catálogo</a>
+          </li>
+          <li class="nav__item">
+            <a href="#contato" class="nav__link">Contato</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="header__cta">
+        <a href="https://wa.me/5541996390108?text=Olá,%20gostaria%20de%20informações%20sobre%20os%20móveis%20da%20JD%20Bella%20Arte" target="_blank" class="btn btn-primary">Fale Conosco</a>
+      </div>
+
+      <button class="mobile-menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+        <span class="mobile-menu-toggle__line"></span>
+        <span class="mobile-menu-toggle__line"></span>
+        <span class="mobile-menu-toggle__line"></span>
+      </button>
+    </div>
+
+    <nav class="mobile-nav" role="navigation" aria-label="Navegação móvel">
+      <ul class="mobile-nav__list">
+        <li class="mobile-nav__item">
+          <a href="index.html" class="mobile-nav__link active">Home</a>
+        </li>
+        <li class="mobile-nav__item">
+          <a href="#catalogo" class="mobile-nav__link">Catálogo</a>
+        </li>
+        <li class="mobile-nav__item">
+          <a href="#contato" class="mobile-nav__link">Contato</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="mobile-overlay"></div>
+  </header>
+
+  <main id="main-content" role="main">
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+      <div class="hero__content container">
+        <h1 class="hero__title animate-on-scroll">
+          <span class="hero__title-line">Móveis exclusivos</span>
+          <span class="hero__title-line">para sua <span class="hero__title-accent">casa</span> ou <span class="hero__title-accent">negócio</span></span>
+        </h1>
+        <p class="hero__subtitle animate-on-scroll">
+          Há 35 anos criamos móveis sob medida que combinam tradição artesanal, 
+          design contemporâneo e funcionalidade excepcional para transformar seus espaços em ambientes únicos.
+        </p>
+        <div class="hero__cta animate-on-scroll">
+          <a href="#catalogo" class="btn btn-primary">Explorar Catálogo</a>
+          <a href="https://wa.me/5541996390108?text=Olá,%20gostaria%20de%20informações%20sobre%20os%20móveis%20da%20JD%20Bella%20Arte" target="_blank" class="btn btn-outline">Solicitar Orçamento</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Catálogo Section -->
+    <section id="catalogo" class="section" style="background-color: #2B2118; padding: var(--spacing-md) 0;">
+      <div class="container">
+        <div class="section-header" style="margin-bottom: var(--spacing-sm);">
+          <h2 class="section-title animate-on-scroll">Nosso Catálogo</h2>
+          <p class="section-subtitle animate-on-scroll">
+            Explore nossa coleção exclusiva de móveis artesanais e industriais, todos feitos sob medida com madeira selecionada para transformar e personalizar seus espaços.
+          </p>
+        </div>
+
+        <div class="category-grid">
+          <!-- Categoria 1: Chalés Modulares - Novidade 2025 -->
+          <div class="category-card animate-on-scroll" onclick="filterProducts('chales-modulares')" style="position: relative;">
+            <img src="assets/images/catalogo/chales-modulares/1ff9cd9e-7642-4ca6-88aa-4836d9ec4329.jpg" alt="Chalés modulares em madeira artesanal - Novidade 2025 JD Bella Arte, estruturas residenciais modulares personalizadas" class="category-card__image">
+            <div class="category-card__overlay" style="background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(43, 33, 24, 0.7));">
+              <div class="category-card__content">
+                <span style="position: absolute; top: 10px; right: 10px; background: #D4A76A; color: #2B2118; padding: 3px 8px; border-radius: 12px; font-size: 0.7em; font-weight: bold;">NOVO 2025</span>
+                <h3 class="category-card__title">Chalés Modulares</h3>
+              </div>
+            </div>
+          </div>
+
+          <!-- Categoria 2: Móveis sob Medida -->
+          <div class="category-card animate-on-scroll" onclick="filterProducts('moveis-sob-medida')">
+            <img src="assets/images/catalogo/moveis-sob-medida/119a0e2d-1702-4ccd-9d31-b50b68b0dc56.jpg" alt="Móveis planejados sob medida em madeira, armários e estantes personalizadas JD Bella Arte para casa e escritório" class="category-card__image">
+            <div class="category-card__overlay">
+              <div class="category-card__content">
+                <h3 class="category-card__title">Móveis sob Medida</h3>
+              </div>
+            </div>
+          </div>
+
+          <!-- Categoria 3: Banquetas -->
+          <div class="category-card animate-on-scroll" onclick="filterProducts('banquetas')">
+            <img src="assets/images/catalogo/banquetas/6a200781-08ce-46bc-9150-04299028b1fc.jpg" alt="Banquetas artesanais em madeira natural, assentos para cozinha, bar e área gourmet JD Bella Arte" class="category-card__image">
+            <div class="category-card__overlay">
+              <div class="category-card__content">
+                <h3 class="category-card__title">Banquetas</h3>
+              </div>
+            </div>
+          </div>
+
+          <!-- Categoria 4: Prateleiras -->
+          <div class="category-card animate-on-scroll" onclick="filterProducts('prateleiras')">
+            <img src="assets/images/catalogo/prateleiras/45ae1ddd-3850-4eb2-b55f-2e8b71c08a73.jpg" alt="Prateleiras decorativas em madeira maciça, estantes flutuantes artesanais JD Bella Arte para organização e decoração" class="category-card__image">
+            <div class="category-card__overlay">
+              <div class="category-card__content">
+                <h3 class="category-card__title">Prateleiras</h3>
+              </div>
+            </div>
+          </div>
+
+          <!-- Categoria 5: Móveis para Festas -->
+          <div class="category-card animate-on-scroll" onclick="filterProducts('moveis-festas')">
+            <img src="assets/images/catalogo/moveis-festas/6f7e0c0c-7f20-4514-9426-8317822ba34a.jpg" alt="Móveis rústicos para festas e eventos, mesas e bancos de madeira para casamentos e celebrações JD Bella Arte" class="category-card__image">
+            <div class="category-card__overlay">
+              <div class="category-card__content">
+                <h3 class="category-card__title">Móveis para Festas</h3>
+              </div>
+            </div>
+          </div>
+
+          <!-- Categoria 6: Conjuntos -->
+          <div class="category-card animate-on-scroll" onclick="filterProducts('conjuntos')">
+            <img src="assets/images/catalogo/conjuntos/68c52739-8225-4617-b258-f6e3deca7c74.jpg" alt="Conjuntos de móveis coordenados em madeira, sets completos de mesa e cadeiras artesanais JD Bella Arte" class="category-card__image">
+            <div class="category-card__overlay">
+              <div class="category-card__content">
+                <h3 class="category-card__title">Conjuntos</h3>
+              </div>
+            </div>
+          </div>
+
+          <!-- Categoria 7: Estantes -->
+          <div class="category-card animate-on-scroll" onclick="filterProducts('estantes')">
+            <img src="assets/images/catalogo/estantes/4f16c465-1781-4f97-a2c5-8fd612882c0b.jpg" alt="Estantes de madeira sob medida, bibliotecas e organizadores artesanais JD Bella Arte para livros e decoração" class="category-card__image">
+            <div class="category-card__overlay">
+              <div class="category-card__content">
+                <h3 class="category-card__title">Estantes</h3>
+              </div>
+            </div>
+          </div>
+
+          <!-- Categoria 8: Aparadores -->
+          <div class="category-card animate-on-scroll" onclick="filterProducts('aparadores')">
+            <img src="assets/images/catalogo/aparadores/8e21a3af-df42-41be-a16c-ff3071f5a693.jpg" alt="Aparadores e buffets em madeira artesanal, móveis para sala de jantar e cozinha JD Bella Arte" class="category-card__image">
+            <div class="category-card__overlay">
+              <div class="category-card__content">
+                <h3 class="category-card__title">Aparadores</h3>
+              </div>
+            </div>
+          </div>
+
+          <!-- Categoria 9: Áreas Externas -->
+          <div class="category-card animate-on-scroll" onclick="filterProducts('areas-externas')">
+            <img src="assets/images/catalogo/areas-externas/bd5f4e3a-19b2-43cc-8df0-1abda1979c36.jpg" alt="Móveis para áreas externas em madeira tratada, bancos e mesas para jardim, varanda e área gourmet JD Bella Arte" class="category-card__image">
+            <div class="category-card__overlay">
+              <div class="category-card__content">
+                <h3 class="category-card__title">Áreas Externas</h3>
+              </div>
+            </div>
+          </div>
+
+          <!-- Categoria 10: Camas e Beliches -->
+          <div class="category-card animate-on-scroll" onclick="filterProducts('camas')">
+            <img src="assets/images/catalogo/camas/ec14fcd7-e734-437b-929e-5d7e1fd32f34.jpg" alt="Camas e beliches artesanais em madeira maciça, móveis para quarto infantil e adulto JD Bella Arte" class="category-card__image">
+            <div class="category-card__overlay">
+              <div class="category-card__content">
+                <h3 class="category-card__title">Camas e Beliches</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Seção de produtos da categoria selecionada - Inicialmente oculta -->
+        <div class="category-products-section" id="category-products" style="display: none;">
+          <div class="section-header">
+            <h2 class="section-title animate-on-scroll" id="category-title">Produtos da Categoria</h2>
+            <p class="section-subtitle animate-on-scroll" id="category-subtitle">
+              Explore os produtos desta categoria
+            </p>
+          </div>
+
+          <div class="category-products-grid" id="category-products-container">
+            <!-- Os produtos da categoria serão inseridos aqui via JavaScript -->
+          </div>
+          
+          <div class="text-center" style="margin-top: 2rem;">
+            <button class="btn btn-outline" id="voltar-categorias" style="padding: 12px 24px;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="transform: rotate(180deg); margin-right: 8px;">
+                <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+              </svg>
+              Voltar para Categorias
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section Destacado -->
+    <section id="contato" class="section" style="background: linear-gradient(135deg, #D4A76A 0%, #2B2118 100%); text-align: center; padding: var(--spacing-4xl) 0;">
+      <div class="container">
+        <div class="animate-on-scroll" style="max-width: 800px; margin: 0 auto;">
+          <h2 style="color: white; font-size: var(--fs-3xl); font-weight: 700; margin-bottom: var(--spacing-lg); text-shadow: 1px 1px 2px rgba(0,0,0,0.3);">
+            Transforme Sua Ideia em Realidade
+          </h2>
+          <p style="color: rgba(255,255,255,0.9); font-size: var(--fs-xl); line-height: 1.6; margin-bottom: var(--spacing-2xl);">
+            Há mais de 35 anos criando móveis únicos e personalizados. 
+            <strong>Solicite seu orçamento gratuito</strong> e descubra como podemos transformar seu espaço.
+          </p>
+          <div style="display: flex; gap: var(--spacing-lg); justify-content: center; flex-wrap: wrap;">
+            <a href="https://wa.me/5541996390108?text=Olá,%20gostaria%20de%20solicitar%20um%20orçamento%20personalizado%20para%20móveis%20da%20JD%20Bella%20Arte" 
+               target="_blank" 
+               class="btn"
+               style="background: #25D366; color: white; padding: 18px 32px; font-size: var(--fs-lg); font-weight: 600; border-radius: 50px; text-decoration: none; display: inline-flex; align-items: center; gap: 12px; box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3); transition: all 0.3s ease; border: none;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/>
+              </svg>
+              Solicitar Orçamento Gratuito
+            </a>
+            <a href="tel:+5541996390108" 
+               class="btn btn-outline"
+               style="color: white; border: 2px solid white; padding: 18px 32px; font-size: var(--fs-lg); font-weight: 600; border-radius: 50px; text-decoration: none; display: inline-flex; align-items: center; gap: 12px; transition: all 0.3s ease; background: transparent;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+              </svg>
+              (41) 99639-0108
+            </a>
+          </div>
+          <p style="color: rgba(255,255,255,0.7); font-size: var(--fs-sm); margin-top: var(--spacing-lg);">
+            ✅ Orçamento sem compromisso &nbsp;|&nbsp; ✅ Atendimento personalizado &nbsp;|&nbsp; ✅ 35 anos de tradição
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer bg-primary" style="padding: var(--spacing-2xl) 0 var(--spacing-lg);">
+    <div class="container">
+      <div class="grid grid-cols-3" style="gap: var(--spacing-xl); margin-bottom: var(--spacing-xl); align-items: start;">
+        <!-- Informações da Empresa -->
+        <div>
+          <h3 class="logo__text" style="color: var(--color-secondary); margin-bottom: var(--spacing-md); font-size: var(--fs-xl);">
+            JD Bella Arte
+          </h3>
+          <p style="color: var(--color-light-dark); line-height: 1.6; margin-bottom: var(--spacing-md);">
+            Há 35 anos criamos móveis únicos que combinam tradição artesanal, qualidade excepcional e design contemporâneo para transformar ambientes residenciais e comerciais.
+          </p>
+        </div>
+
+        <!-- Contato Essencial -->
+        <div>
+          <h4 style="color: var(--color-secondary); margin-bottom: var(--spacing-md);">Contato</h4>
+          <div style="color: var(--color-light-dark);">
+            <p style="margin-bottom: var(--spacing-sm); display: flex; align-items: center; gap: 8px;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+              </svg>
+              <a href="tel:+5541996390108" style="color: var(--color-light-dark); text-decoration: none;">(41) 99639-0108</a>
+            </p>
+            <p style="margin-bottom: var(--spacing-sm); display: flex; align-items: center; gap: 8px;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+              </svg>
+              contato@jdbellaarte.com.br
+            </p>
+            <p style="display: flex; align-items: flex-start; gap: 8px;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="margin-top: 2px;">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+              </svg>
+              <span>Tv. Kleina, 446<br>Almirante Tamandaré - PR</span>
+            </p>
+          </div>
+        </div>
+
+        <!-- Redes Sociais -->
+        <div>
+          <h4 style="color: var(--color-secondary); margin-bottom: var(--spacing-md);">Nos Siga</h4>
+          <div style="display: flex; flex-direction: column; gap: var(--spacing-sm);">
+            <a href="https://www.instagram.com/jdbellaarte_moveis/" target="_blank" aria-label="Instagram" 
+               style="display: inline-flex; align-items: center; text-decoration: none; padding: 10px 16px; background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); border-radius: 8px; color: white; font-weight: 500; transition: all 0.3s ease; width: fit-content;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 8px;">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069z"/>
+                <path d="M12 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4z"/>
+                <circle cx="18.406" cy="5.595" r="1.44"/>
+              </svg>
+              Instagram
+            </a>
+            <a href="https://wa.me/5541996390108?text=Olá,%20gostaria%20de%20informações%20sobre%20os%20móveis%20da%20JD%20Bella%20Arte" target="_blank" aria-label="WhatsApp" 
+               style="display: inline-flex; align-items: center; text-decoration: none; padding: 10px 16px; background: #25D366; border-radius: 8px; color: white; font-weight: 500; transition: all 0.3s ease; width: fit-content;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 8px;">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/>
+              </svg>
+              WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div style="border-top: 1px solid rgba(212, 167, 106, 0.1); padding-top: var(--spacing-md); text-align: center;">
+        <p style="color: var(--color-light-dark); margin: 0; font-size: var(--fs-sm);">
+          35 anos transformando sonhos em realidade.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/catalog-scripts.js"></script>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Animações ao scroll
+      const animateElements = document.querySelectorAll('.animate-on-scroll');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animated');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.2
+      });
+      
+      animateElements.forEach(element => {
+        observer.observe(element);
+      });
+    });
+  </script>
+</body>
+</html>

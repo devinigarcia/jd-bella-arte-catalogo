@@ -1,0 +1,173 @@
+/* ==========================================================================
+   CSS Complementar para JD Bella Arte - Melhorias sem quebrar o layout existente
+   ========================================================================== */
+
+/* Variáveis CSS para consistência */
+:root {
+    --color-primary: #2B2118;
+    --color-secondary: #D4A373;
+    --color-accent: #EFEFEF;
+    --color-white: #FFFFFF;
+    --color-light-dark: #666;
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 48px;
+    --spacing-2xl: 64px;
+    --spacing-4xl: 96px;
+    --radius-sm: 4px;
+    --radius-lg: 12px;
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Melhorias para botões */
+.btn {
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-sm);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Melhorias para cards */
+.card {
+    transition: all 0.3s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Melhorias para formulários */
+input, textarea, select {
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus, textarea:focus, select:focus {
+    outline: none;
+    border-color: var(--color-secondary);
+    box-shadow: 0 0 0 3px rgba(212, 163, 115, 0.1);
+}
+
+/* Melhorias para footer */
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-section li {
+    margin-bottom: var(--spacing-sm);
+}
+
+.footer-section a:hover {
+    color: var(--color-secondary) !important;
+}
+
+/* Melhorias para responsividade sem quebrar o layout */
+@media (max-width: 768px) {
+    .grid-cols-2, .grid-cols-3 {
+        grid-template-columns: 1fr !important;
+        gap: var(--spacing-xl) !important;
+    }
+    
+    .section {
+        padding: var(--spacing-2xl) 0 !important;
+    }
+    
+    .section-title {
+        font-size: 2rem !important;
+    }
+}
+
+/* Utilitários */
+.text-center {
+    text-align: center;
+}
+
+.flex {
+    display: flex;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+/* Animações suaves */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Melhorias para catálogo */
+.catalog-filter {
+    transition: all 0.3s ease;
+}
+
+.catalog-filter:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-sm);
+}
+
+/* Melhorias para botões sociais */
+.social-button {
+    transition: all 0.3s ease;
+}
+
+.social-button:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Correções pontuais */
+.hero__title .highlight {
+    color: var(--color-secondary);
+}
+
+.section-header {
+    margin-bottom: var(--spacing-2xl);
+}
+
+/* Scroll suave melhorado */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Loading spinner para imagens */
+img {
+    transition: opacity 0.3s ease;
+}
+
+img:not([src]) {
+    opacity: 0.5;
+}
+
+/* Melhorias para acessibilidade */
+a:focus, button:focus, input:focus, textarea:focus {
+    outline: 2px solid var(--color-secondary);
+    outline-offset: 2px;
+}
+
+/* Performance - will-change para animações */
+.hover-lift {
+    will-change: transform;
+}
+
+.animate-on-scroll {
+    will-change: opacity, transform;
+}
