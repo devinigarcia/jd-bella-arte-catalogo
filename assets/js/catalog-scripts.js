@@ -62,9 +62,75 @@ function filterProducts(category) {
     
     productCard.appendChild(img);
     
-    // Adicionar listener para abrir o detalhe do produto (futuro)
+    // Adicionar listener para ampliar a imagem
     productCard.addEventListener('click', function() {
-      window.open(`https://wa.me/5541996390108?text=Olá,%20gostaria%20de%20informações%20sobre%20este%20produto%20da%20categoria%20${encodeURIComponent(categoryNames[category])}`, '_blank');
+      // Criar modal para ampliar imagem
+      const modal = document.createElement('div');
+      modal.className = 'image-modal';
+      modal.innerHTML = `
+        <div class="modal-content">
+          <div class="modal-image-container">
+            <span class="close-modal">&times;</span>
+            <div class="loading-spinner" style="display: none;"></div>
+            <img src="${url}" alt="${categoryNames[category]} - JD Bella Arte" class="modal-image" loading="eager">
+          </div>
+          <div class="modal-actions">
+            <button class="btn-orcamento-modal" onclick="window.open('https://wa.me/5541996390108?text=Olá,%20vim%20pelo%20site.%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20móveis%20da%20JD%20Bella%20Arte', '_blank')">
+              <i class="fas fa-comments"></i>
+              Solicitar Orçamento
+            </button>
+          </div>
+        </div>
+      `;
+      
+      document.body.appendChild(modal);
+      
+      // Mostrar modal IMEDIATAMENTE com transição
+      requestAnimationFrame(() => {
+        modal.classList.add('show');
+      });
+      
+      // Configurar carregamento inteligente da imagem
+      const modalImage = modal.querySelector('.modal-image');
+      const loadingSpinner = modal.querySelector('.loading-spinner');
+      
+      let hasLoaded = false;
+      let loadingTimer = null;
+      
+      // Função para esconder loading e mostrar imagem
+      function showImage() {
+        hasLoaded = true;
+        if (loadingTimer) clearTimeout(loadingTimer);
+        loadingSpinner.style.display = 'none';
+        modalImage.style.opacity = '1';
+      }
+      
+      // Se a imagem já estiver carregada (cache), mostrar imediatamente
+      if (modalImage.complete && modalImage.naturalHeight !== 0) {
+        showImage();
+      } else {
+        // Só mostrar loading se demorar mais de 500ms
+        loadingTimer = setTimeout(() => {
+          if (!hasLoaded) {
+            loadingSpinner.style.display = 'block';
+          }
+        }, 500);
+        
+        modalImage.onload = showImage;
+        modalImage.onerror = showImage;
+      }
+      
+      // Fechar modal ao clicar no X ou fora da imagem COM TRANSIÇÃO
+      modal.addEventListener('click', function(e) {
+        if (e.target === modal || e.target.className === 'close-modal') {
+          modal.classList.remove('show');
+          setTimeout(() => {
+            if (document.body.contains(modal)) {
+              document.body.removeChild(modal);
+            }
+          }, 300);
+        }
+      });
     });
     
     categoryProductsContainer.appendChild(productCard);

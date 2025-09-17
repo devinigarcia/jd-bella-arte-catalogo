@@ -880,3 +880,93 @@ window.addEventListener('error', (e) => {
 window.addEventListener('unhandledrejection', (e) => {
   console.error('Promise rejeitada:', e.reason);
 });
+
+/**
+ * Sistema de Loading
+ */
+const LoadingSystem = {
+  init() {
+    this.createPageLoader();
+    this.setupImageLoading();
+    this.showPageLoader();
+    
+    // Remover loader quando página estiver carregada
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', () => {
+        setTimeout(() => this.hidePageLoader(), 200);
+      });
+    } else {
+      setTimeout(() => this.hidePageLoader(), 200);
+    }
+  },
+  
+  createPageLoader() {
+    if (document.getElementById('page-loader')) return;
+    
+    const loader = document.createElement('div');
+    loader.id = 'page-loader';
+    loader.className = 'page-loading';
+    loader.innerHTML = `
+      <div class="loading-spinner"></div>
+      <div class="loading-text">Carregando JD Bella Arte...</div>
+    `;
+    document.body.appendChild(loader);
+  },
+  
+  showPageLoader() {
+    const loader = document.getElementById('page-loader');
+    if (loader) {
+      loader.style.display = 'flex';
+    }
+  },
+  
+  hidePageLoader() {
+    const loader = document.getElementById('page-loader');
+    if (loader) {
+      loader.style.opacity = '0';
+      loader.style.transition = 'opacity 0.5s ease';
+      setTimeout(() => {
+        if (loader.parentNode) {
+          loader.parentNode.removeChild(loader);
+        }
+      }, 500);
+    }
+  },
+  
+  setupImageLoading() {
+    // Adicionar spinners para imagens que demoram para carregar
+    document.addEventListener('click', (e) => {
+      if (e.target.closest('.category-card')) {
+        this.showCategoryLoader();
+      }
+    });
+  },
+  
+  showCategoryLoader() {
+    const existingLoader = document.querySelector('.category-loading');
+    if (existingLoader) return;
+    
+    const loader = document.createElement('div');
+    loader.className = 'category-loading page-loading';
+    loader.innerHTML = `
+      <div class="loading-spinner"></div>
+      <div class="loading-text">Carregando produtos...</div>
+    `;
+    document.body.appendChild(loader);
+    
+    // Remover após 1 segundo para carregamento mais rápido
+    setTimeout(() => {
+      if (loader.parentNode) {
+        loader.style.opacity = '0';
+        setTimeout(() => {
+          if (loader.parentNode) {
+            loader.parentNode.removeChild(loader);
+          }
+        }, 200);
+      }
+    }, 800);
+  }
+};
+
+// Inicializar sistema de loading
+LoadingSystem.init();

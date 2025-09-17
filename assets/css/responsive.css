@@ -590,6 +590,27 @@ h1, h2, h3, h4, h5, h6, p {
   }
 }
 
+/* Garantir que as cores dos links da navegação sejam sempre claras em todos os dispositivos */
+@media (max-width: 1024px) {
+  .nav__link {
+    color: var(--color-light) !important;
+  }
+  
+  .nav__link:hover,
+  .nav__link.active {
+    color: var(--color-secondary) !important;
+  }
+  
+  .mobile-nav__link {
+    color: var(--color-light) !important;
+  }
+  
+  .mobile-nav__link:hover,
+  .mobile-nav__link.active {
+    color: var(--color-secondary) !important;
+  }
+}
+
 /* Fix para inputs em iOS */
 @media (max-width: 767.98px) {
   input[type="text"],
